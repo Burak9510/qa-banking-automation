@@ -1,0 +1,9 @@
+I'm currently a manual QA tester at a hardware company, where I test laptops —
+keyboards, trackpads, webcams, ports — across brands like Dell, HP, Lenovo, and Mac.
+We use Blancco for pre-grading and Razer for cosmetic grading.
+So I have hands-on QA experience in a high-volume environment.
+My background also includes a QA Automation bootcamp covering 
+Java, Selenium WebDriver, TestNG, Cucumber, REST Assured, and SQL. 
+I'm currently sharpening those skills and building a banking automation framework as a portfolio project.
+I'm looking to transition fully into a QA Automation Engineer role where 
+I can combine the manual QA discipline I use every day with the automation skills I'm rebuilding.
