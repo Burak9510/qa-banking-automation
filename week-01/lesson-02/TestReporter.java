@@ -18,7 +18,33 @@ public class TestReporter {
             return "BUILD FAILED (RED)";
         }
     }
+    
+    public static int countPassed(String[] testResults){
+        int passed = 0;
+        for(String result : testResults){
+            if("PASS".equals(result)){
+                passed++;
+            }
+        }
+        return passed;
+    }
 
+    public static void runFullReport(String[] testResults){
+        int total = testResults.length;
+        int passed = countPassed(testResults);
+        double rate = calculatePassRate(total, passed);
+        String status = evaluateBuild(rate);
+
+        System.out.println("====== TEST REPORT ======");
+        System.out.println("Total tests:  " + total);
+        System.out.println("Passed:       " + passed);
+        System.out.println("Not passed:   " + (total - passed));
+        System.out.println("Pass rate:    " + rate + "%");
+        System.out.println("Status:       " + status);
+        System.out.println("=========================");
+    }
+
+    // Main method to test the functionality
     public static void main(String[] args) {
         double rate = calculatePassRate(50, 47);
         System.out.println("Pass rate: " + rate + "%");
@@ -30,6 +56,10 @@ public class TestReporter {
         System.out.println("94.9% -> " + evaluateBuild(94.9));
         System.out.println("80.0% -> " + evaluateBuild(80.0));
         System.out.println("79.9% -> " + evaluateBuild(79.9));
+
+        System.out.println("\n=== Full Report Test ===");
+        String[] results = {"PASS", "FAIL", "PASS", "PASS", "FAIL", "PASS", "SKIP", "PASS"};
+        runFullReport(results);
     }
 }
 
